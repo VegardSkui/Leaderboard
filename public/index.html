@@ -106,15 +106,22 @@ function addGame(winner, looser) {
     })
 
     Promise.all([getWinner, getLooser]).then(data => {
-        let winnerRank = data[0].exists ? data[0].data().rank : defaultRank
-        let looserRank = data[1].exists ? data[1].data().rank : defaultRank
+        // Get the existing data for the winner/looser, or use default data
+        let winner = data[0].exists ? data[0].data() : { rank: defaultRank, wins: 0, losses: 0 }
+        let looser = data[1].exists ? data[1].data() : { rank: defaultRank, wins: 0, losses: 0 }
 
         // Calculate the updated ranks for the players
-        let ranks = newRanks(winnerRank, looserRank)
+        let ranks = newRanks(winner["rank"], looser["rank"])
+        winner["rank"] = ranks[0]
+        looser["rank"] = ranks[1]
+
+        // Update wins and losses
+        winner["wins"]++
+        looser["losses"]++
 
         // Store the updated ranks
-        updateWinner = winnerDoc.set({ rank: ranks[0] })
-        updateLooser = looserDoc.set({ rank: ranks[1] })
+        updateWinner = winnerDoc.set(winner)
+        updateLooser = looserDoc.set(looser)
 
         // Update the table when the results have been stored
         Promise.all([updateWinner, updateLooser]).then(updateTable)

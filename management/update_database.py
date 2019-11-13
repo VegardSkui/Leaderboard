@@ -14,6 +14,6 @@ players_ref = db.collection("players")
 for doc in players_ref.stream():
     players_ref.document(doc.id).delete()
 
-# Create player records using the calculated ranks
-for (name, rank) in get_players().items():
-    players_ref.document(name).set({ "rank": rank })
+# Create new player records
+for (name, data) in get_players().items():
+    players_ref.document(name).set(data)

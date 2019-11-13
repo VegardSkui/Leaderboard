@@ -4,7 +4,7 @@ Run `python3 calculate_standings.py` to calculate the current standings using th
 
 Run `python3 dump_games.py` to dump all game records from the database to `games.csv`. This will remove the games from the database.
 
-Run `python3 update_ranks.py` to update the player ranks on the server with the ranks calculated from `games.csv`. This deletes all current player records from the database, so remember to dump all games first!
+Run `python3 update_database.py` to update the player data on the server with the data calculated from `games.csv`. This deletes all current player records from the database, so remember to dump all games first!
 
 ---
 
