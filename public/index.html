@@ -30,6 +30,8 @@
                 <tr>
                     <th class="px-4 py-2">Rank</th>
                     <th class="px-4 py-2">Name</th>
+                    <th class="px-4 py-2">Wins</th>
+                    <th class="px-4 py-2">Losses</th>
                 </tr>
             </thead>
             <tbody id="table-body"></tbody>
@@ -160,8 +162,18 @@ function updateTable() {
             name.classList.add("border", "px-4", "py-2")
             name.title = doc.data().rank
 
+            let wins = document.createElement("td")
+            wins.textContent = doc.data().wins
+            wins.classList.add("border", "px-4", "py-2")
+
+            let losses = document.createElement("td")
+            losses.textContent = doc.data().losses
+            losses.classList.add("border", "px-4", "py-2")
+
             row.appendChild(standing)
             row.appendChild(name)
+            row.appendChild(wins)
+            row.appendChild(losses)
             table.appendChild(row)
 
             total += doc.data().wins
