@@ -162,7 +162,7 @@ document.getElementById("add-game-form").onsubmit = e => {
     const looserInput = document.getElementById("looser")
 
     // Add the game
-    addGame(winnerInput.value, looserInput.value)
+    addGame(winnerInput.value.trim(), looserInput.value.trim())
 
     // Clear the inputs
     winnerInput.value = ""
