@@ -43,25 +43,22 @@
     </div>
 
     <!-- Add SDKs for Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.3.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.3.0/firebase-firestore.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 
     <script>
-// Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyBSWf6lJ3bBrUva3h9Vp4IYZevIqZ7iHAk",
-    authDomain: "revolve-ping-pong.firebaseapp.com",
-    databaseURL: "https://revolve-ping-pong.firebaseio.com",
-    projectId: "revolve-ping-pong",
-    storageBucket: "revolve-ping-pong.appspot.com",
-    messagingSenderId: "522403411478",
-    appId: "1:522403411478:web:c9a3f1de5bd527c5292737"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
 const db = firebase.firestore();
+
+// Connect to the emulator if on localhost
+if (location.hostname === "localhost") {
+    db.settings({
+        host: "localhost:8080",
+        ssl: false
+    })
+}
 
 const defaultRank = 1000
 const kFactor = 16
