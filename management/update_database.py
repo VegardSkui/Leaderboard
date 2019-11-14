@@ -10,10 +10,18 @@ db = firestore.client()
 
 players_ref = db.collection("players")
 
+# Create a new batch of database operations
+batch = db.batch()
+
 # Delete all current player records
 for doc in players_ref.stream():
-    players_ref.document(doc.id).delete()
+    doc_ref = players_ref.document(doc.id)
+    batch.delete(doc_ref)
 
 # Create new player records
 for (name, data) in get_players().items():
-    players_ref.document(name).set(data)
+    doc_ref = players_ref.document(name)
+    batch.set(doc_ref, data)
+
+# Commit the batch
+batch.commit()
