@@ -1,0 +1,16 @@
+{
+    "name": "revolve-ping-pong",
+    "version": "1.0.0",
+    "description": "🏓 Revolve Ping-Pong",
+    "private": true,
+    "scripts": {
+        "deploy": "webpack --mode production && firebase deploy",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Vegard Skui",
+    "license": "MIT",
+    "devDependencies": {
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10"
+    }
+}
