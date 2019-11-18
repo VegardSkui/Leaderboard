@@ -20,9 +20,9 @@ export default class RevolvePingPong {
         this.update()
 
         // Toggle the probability column if not focused on an input (in the body)
-        // and pressing the W key while holding down both control and shift
-        document.addEventListener("keypress", e => {
-            if (e.target.tagName == "BODY" && e.shiftKey && e.ctrlKey && e.code == "KeyW")
+        // and releasing the W key while holding down both alt and shift
+        document.addEventListener("keyup", e => {
+            if (e.target.tagName == "BODY" && e.altKey && e.shiftKey && e.code == "KeyW")
                 this.playersTable.toggleProbabilityColumn()
         })
 
