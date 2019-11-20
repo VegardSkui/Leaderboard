@@ -2,6 +2,9 @@ const Dotenv = require("dotenv-webpack")
 const path = require("path")
 
 let config = {
+    devServer: {
+        contentBase: path.resolve(__dirname, "public")
+    },
     entry: "./src/main.js",
     output: {
         filename: "main.js",

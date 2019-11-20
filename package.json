@@ -5,6 +5,7 @@
     "private": true,
     "scripts": {
         "deploy": "webpack --mode production && firebase deploy",
+        "start": "webpack-dev-server --open",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Vegard Skui",
@@ -12,7 +13,8 @@
     "devDependencies": {
         "dotenv-webpack": "^1.7.0",
         "webpack": "^4.41.2",
-        "webpack-cli": "^3.3.10"
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "^3.9.0"
     },
     "dependencies": {
         "firebase": "^7.4.0"
