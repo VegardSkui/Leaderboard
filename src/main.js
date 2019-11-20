@@ -1,4 +1,17 @@
+import * as firebase from "firebase/app"
+import "firebase/firestore"
 import RevolvePingPong from "./RevolvePingPong"
+
+// Initialize Firebase
+firebase.initializeApp({
+    apiKey: process.env.FIREBASE_API_KEY,
+    appId: process.env.FIREBASE_APP_ID,
+    authDomain: process.env.FIREBASE_PROJECT_ID + ".firebaseapp.com",
+    databaseURL: "https://" + process.env.FIREBASE_PROJECT_ID + ".firebaseio.com",
+    messagingSenderId: process.env.FIREBASE_SENDER_ID,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_PROJECT_ID + "appspot.com"
+})
 
 const db = firebase.firestore()
 
