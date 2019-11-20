@@ -15,6 +15,9 @@ export default class RevolvePingPong {
         this.db = db
         this.playersTable = new PlayersTable("players")
 
+        // Set the document title
+        document.getElementById("title").textContent = document.title = process.env.APP_NAME
+
         // Give the winner field focus, and do the initial table update
         document.getElementById("winner").focus()
         this.update()
