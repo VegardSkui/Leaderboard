@@ -65,5 +65,6 @@ node_modules/
 .env
 .env.deploy
 
-# Compiled script
+# Build output
+public/main.css
 public/main.js

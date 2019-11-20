@@ -2,6 +2,9 @@ import * as firebase from "firebase/app"
 import "firebase/firestore"
 import RevolvePingPong from "./RevolvePingPong"
 
+// Load stylesheet
+import "./main.css"
+
 // Initialize Firebase
 firebase.initializeApp({
     apiKey: process.env.FIREBASE_API_KEY,
