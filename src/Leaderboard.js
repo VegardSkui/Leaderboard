@@ -5,9 +5,9 @@ import PlayersTable from "./PlayersTable"
 /**
  * Manages the whole application
  */
-export default class RevolvePingPong {
+export default class Leaderboard {
     /**
-     * Initializes a new Revolve Ping-Pong instance using the provided
+     * Initializes a new Leaderboard instance using the provided
      * firestore connection
      * @param {object} db - The firestore connection
      */

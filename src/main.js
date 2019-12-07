@@ -1,6 +1,6 @@
 import * as firebase from "firebase/app"
 import "firebase/firestore"
-import RevolvePingPong from "./RevolvePingPong"
+import Leaderboard from "./Leaderboard"
 
 // Load stylesheet
 import "./main.css"
@@ -29,4 +29,4 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 // Kickoff
-new RevolvePingPong(db)
+new Leaderboard(db)
