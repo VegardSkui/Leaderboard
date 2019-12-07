@@ -1,4 +1,10 @@
-# 🏓 Revolve Ping-Pong
+# Leaderboard
+
+<img alt="Medal Icon" src="icon.svg" width="100">
+
+A leaderboard webapp that uses ELO rating to determine the current rankings. Can be used for any games where a match results in a single winner and a single looser.
+
+---
 
 Run `npm run deploy` to build the scripts and stylesheet for production, and deploy the site to the web.
 
