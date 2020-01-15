@@ -12,6 +12,17 @@ Run `firebase emulators:start` to run the site and database locally.
 
 Run `npm start` to start the webpack development server, and open the page in the default browser.
 
+## Setup
+
+This guide assumes you have cloned this Git repository, and have `npm` and the [Firebase CLI](https://firebase.google.com/docs/cli/) installed.
+
+1. Add a new project on [Firebase](https://console.firebase.google.com/)
+4. Provision Cloud Firestore by going to the Database tab in the Firebase Web Console and pressing Create database
+2. Run `firebase use YOUR_PROJECT_ID` to set your newly created Firebase project
+3. Run `npm install` to install dependencies
+4. Copy `.env.example` to `.env.deploy` and set your environment variables (`.env` is used during local development)
+5. Run `npm run deploy` to build and deploy
+
 ## Database Layout
 
 The project uses a Firebase Firestore database as it's live backend.
