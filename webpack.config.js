@@ -1,6 +1,5 @@
 const path = require("path")
 const Dotenv = require("dotenv-webpack")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = (env, argv) => {
     let config = {
@@ -13,20 +12,7 @@ module.exports = (env, argv) => {
                 {
                     test: /\.css$/,
                     exclude: /node_modules/,
-                    use: [
-                        MiniCssExtractPlugin.loader,
-                        "css-loader",
-                        {
-                            loader: "postcss-loader",
-                            options: {
-                                config: {
-                                    ctx: {
-                                        mode: argv.mode
-                                    }
-                                }
-                            }
-                        }
-                    ]
+                    use: ["style-loader", "css-loader", "postcss-loader"]
                 }
             ]
         },
@@ -34,9 +20,7 @@ module.exports = (env, argv) => {
             filename: "main.js",
             path: path.resolve(__dirname, "public")
         },
-        plugins: [
-            new MiniCssExtractPlugin()
-        ]
+        plugins: []
     }
 
     let dotenv_path = path.resolve(__dirname, ".env")
